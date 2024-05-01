@@ -5,7 +5,7 @@ import argparse
 from datetime import datetime
 
 
-def update_json(excel_path, json_path):
+def update_json(excel_path, json_path, script_path):
 
     if not os.path.exists(excel_path):
         print(f'Requested Excel file could not be found at the specified directory: "{excel_path}"\nClosing...')
@@ -23,7 +23,7 @@ def update_json(excel_path, json_path):
         exit()
 
     # Default log file name, generated in the same directory as the JSON file
-    log_path = os.path.join(os.path.dirname(json_path), 'log.txt')
+    log_path = os.path.join(script_path, 'log.txt')
 
     with open(log_path, 'a', encoding='utf-8') as log_file:
         log_file.write(f"\nUpdate Log - {datetime.now()}\n")
@@ -63,5 +63,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    # Get the directory where the script is located
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+
     # Call the function to update the JSON file
-    update_json(args.excel_path, args.json_path)
+    update_json(args.excel_path, args.json_path, script_dir)
