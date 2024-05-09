@@ -149,8 +149,6 @@ if __name__ == "__main__":
 
     file_ext = os.path.splitext(args.translation_path)[1].lower()
 
-    print(args)
-
     if file_ext == ".json":
         # Call the function to update the JSON file
         update_json(args.excel_path, args.translation_path, script_dir, args.v, args.l)
