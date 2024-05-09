@@ -1,7 +1,7 @@
 # **Translation Load Tool**
 
 This tool was made to facilitate faster changes in application translations and localization.
-It receives a path to an Excel and a path to a JSON file and applies the values of the Excel file to the JSON for the
+It receives a path to an Excel and a path to a JSON or CSV file and applies the values of the Excel file to the JSON for the
 matching keys, if they exist. It also includes logging functionally.
 
 # **Pre-requisites and dependencies**
@@ -13,8 +13,8 @@ matching keys, if they exist. It also includes logging functionally.
 
 # **Expected file format**
 
-- A .xlsx file with 2 columns: _translation keys_ and _translation values_ (note: these 2 texts need to be exactly as shown here and in the screenshot below)
-- A .json file which will be modified by the script based on the key and value columns
+- A .xlsx file with 2 columns: _translation keys_ and _translation values_
+- A .json or .csv file which will be modified by the script based on the key and value columns
 
 <img width="293" alt="image" src="https://github.com/fmalakis/translation-load-tool/assets/61471928/17cf7cba-c3d8-4122-9d17-155b156d5ca7">
 
